@@ -6,16 +6,16 @@ from setuptools import setup, find_packages
 with open('README.md') as readme:
     long_description = readme.read()
 
-version = '1.2.0-ALPHA'
+version = '1.2.1a0'
 
 deps = [
-    'Pillow>=4.3.0',
-    'psutil>=5.4.2',
+    'Pillow>=9.0.0',
+    'psutil>=5.9.0',
     'colored>=1.3.93',
     'pygtrie>=2.3.3',
     're-wx>=0.0.9',
-    'typing-extensions==3.10.0.2',
-    'wxpython>=4.1.0',
+    'typing-extensions>=4.5.0',
+    'wxpython>=4.2.0'
 ]
 
 setup(
@@ -27,7 +27,7 @@ setup(
     description=('Turn (almost) any command line program into a full GUI '
                  'application with one line'),
     license='MIT',
-    python_requires='>=3.6',
+    python_requires='>=3.11, <=3.14',
     packages=find_packages(),
     install_requires=deps,
     include_package_data=True,
