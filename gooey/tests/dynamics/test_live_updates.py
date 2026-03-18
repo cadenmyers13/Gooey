@@ -1,6 +1,5 @@
 import sys
 import unittest
-from copy import deepcopy
 
 from gooey import Events
 from gooey.tests.harness import instrumentGooey

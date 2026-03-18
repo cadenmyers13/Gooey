@@ -279,7 +279,7 @@ def header_props(state, params):
             'subtitle': params['program_description'],
             'height': params['header_height'],
             'image_uri': ims['images']['configIcon'],
-            'image_size': (six.MAXSIZE, params['header_height'] - 10)
+            'image_size': (sys.maxsize, params['header_height'] - 10)
     }
 
 

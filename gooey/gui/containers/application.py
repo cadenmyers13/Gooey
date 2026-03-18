@@ -12,7 +12,7 @@ from subprocess import CalledProcessError
 from threading import Thread, get_ident
 from typing import Mapping, Dict, Type, Iterable
 
-import six
+import sys
 import wx  # type: ignore
 
 from gooey.gui.state import FullGooeyState
@@ -87,7 +87,7 @@ class GooeyApplication(wx.Frame):
             'subtitle': self.buildSpec['program_description'],
             'height': self.buildSpec['header_height'],
             'image_uri': self.buildSpec['images']['configIcon'],
-            'image_size': (six.MAXSIZE, self.buildSpec['header_height'] - 10)}
+            'image_size': (sys.maxsize, self.buildSpec['header_height'] - 10)}
 
         state = form_page(initial_state(self.buildSpec))
 
