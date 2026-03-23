@@ -20,7 +20,7 @@ deps = [
 ]
 
 setup(
-    name='Gooey',
+    name='TestPypiGooey',
     version=version,
     url='http://pypi.python.org/pypi/Gooey/',
     author='Chris Kiehl',
@@ -28,7 +28,7 @@ setup(
     description=('Turn (almost) any command line program into a full GUI '
                  'application with one line'),
     license='MIT',
-    python_requires='>=3.6',
+    python_requires='>=3.11, <-3.15',
     packages=find_packages(),
     install_requires=deps,
     include_package_data=True,
