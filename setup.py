@@ -28,7 +28,7 @@ setup(
     description=('Turn (almost) any command line program into a full GUI '
                  'application with one line'),
     license='MIT',
-    python_requires='>=3.11, <-3.15',
+    python_requires='>=3.11, <=3.15',
     packages=find_packages(),
     install_requires=deps,
     include_package_data=True,
