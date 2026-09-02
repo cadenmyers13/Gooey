@@ -11,13 +11,11 @@ version = '1.0.8.2'
 deps = [
     'Pillow>=4.3.0',
     'psutil>=5.4.2',
-    'colored>=1.3.93',
-    'pygtrie>=2.3.3'
+    'colored>=1.3.93,<2',
+    'pygtrie>=2.3.3',
+    'six>=1.12.0',
+    'wxpython>=4.1.0',
 ]
-
-if sys.version[0] == '3':
-    deps.append('wxpython>=4.1.0')
-
 
 setup(
     name='Gooey',
