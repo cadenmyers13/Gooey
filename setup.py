@@ -29,7 +29,6 @@ setup(
     install_requires=deps,
     include_package_data=True,
     python_requires='>=3.8',
-    dependency_links = ["http://www.wxpython.org/download.php"],
     classifiers = [
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
