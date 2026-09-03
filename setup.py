@@ -12,7 +12,6 @@ deps = [
     'psutil>=5.4.2',
     'colored>=1.3.93,<2',
     'pygtrie>=2.3.3',
-    'six>=1.12.0',
     'wxpython>=4.1.0',
 ]
 
