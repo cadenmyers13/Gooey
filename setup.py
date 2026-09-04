@@ -1,23 +1,19 @@
 """Script for setuptools."""
-import sys
 from setuptools import setup, find_packages
 
 
 with open('README.md') as readme:
     long_description = readme.read()
 
-version = '1.0.8.1'
+version = '1.0.8.2'
 
 deps = [
     'Pillow>=4.3.0',
     'psutil>=5.4.2',
-    'colored>=1.3.93',
-    'pygtrie>=2.3.3'
+    'colored>=1.3.93,<2',
+    'pygtrie>=2.3.3',
+    'wxpython>=4.1.0',
 ]
-
-if sys.version[0] == '3':
-    deps.append('wxpython>=4.1.0')
-
 
 setup(
     name='Gooey',
@@ -31,15 +27,20 @@ setup(
     packages=find_packages(),
     install_requires=deps,
     include_package_data=True,
-    dependency_links = ["http://www.wxpython.org/download.php"],
+    python_requires='>=3.8',
     classifiers = [
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Topic :: Desktop Environment',
         'Topic :: Software Development :: Build Tools',
         'Topic :: Software Development :: Widget Sets',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
         'License :: OSI Approved :: MIT License'
     ],
     long_description='''
