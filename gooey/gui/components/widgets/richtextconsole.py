@@ -12,21 +12,27 @@ class RichTextConsole(wx.richtext.RichTextCtrl):
         super(wx.richtext.RichTextCtrl, self).__init__(parent, -1, "", style=wx.richtext.RE_MULTILINE | wx.richtext.RE_READONLY)
         self.regex_urls=re.compile(r'\b((?:file://|https?://|mailto:)[^][\s<>|]*)')
         self.url_colour = wx.Colour(0,0,255)
-        self.esc = colored.library.Library.ESC
-        self.end = colored.library.Library.END
+        # Build escape sequences from colored's Library constants rather than
+        # colored.style()/colored.fore(), which return '' when stdout is not a TTY.
+        library = colored.library.Library
+        self.esc = library.ESC
+        self.end = library.END
         self.noop = lambda *args, **kwargs: None
 
+        def styleSeq(name):
+            return '{}{}{}'.format(library.ESC, library.STYLES[name], library.END)
+
         self.actionsMap = {
-            colored.style('bold'): self.BeginBold,
-            colored.style('res_bold'): self.EndBold,
-            colored.style('underline'): self.BeginUnderline,
-            colored.style('res_underline'): self.EndUnderline,
-            colored.style('reset'): self.EndAllStyles,
+            styleSeq('bold'): self.BeginBold,
+            styleSeq('res_bold'): self.EndBold,
+            styleSeq('underline'): self.BeginUnderline,
+            styleSeq('res_underline'): self.EndUnderline,
+            styleSeq('reset'): self.EndAllStyles,
         }
 
         # Actions for coloring text
-        for index, hex in colored.library.Library.HEX_COLORS.items():
-            escSeq = colored.fore(index)
+        for index, hex in library.HEX_COLORS.items():
+            escSeq = '{}{}{}'.format(library.FOREGROUND_256, index, library.END)
             wxcolor = wx.Colour(int(hex[1:3],16), int(hex[3:5],16), int(hex[5:],16), alpha=wx.ALPHA_OPAQUE)
             # NB : we use a default parameter to force the evaluation of the binding
             self.actionsMap[escSeq] = lambda bindedColor=wxcolor: self.BeginTextColour(bindedColor)
