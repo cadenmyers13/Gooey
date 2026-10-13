@@ -42,6 +42,7 @@ setup(
         'Programming Language :: Python :: 3.14',
         'License :: OSI Approved :: MIT License'
     ],
+    long_description_content_type='text/x-rst',
     long_description='''
 
 Gooey (Beta)
