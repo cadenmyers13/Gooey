@@ -7,23 +7,23 @@ that tie everything together.
 
 import wx
 
-WINDOW_STOP     = wx.Window.NewControlId()
-WINDOW_CANCEL   = wx.Window.NewControlId()
-WINDOW_CLOSE    = wx.Window.NewControlId()
-WINDOW_START    = wx.Window.NewControlId()
-WINDOW_RESTART  = wx.Window.NewControlId()
-WINDOW_EDIT     = wx.Window.NewControlId()
+WINDOW_STOP     = wx.NewIdRef()
+WINDOW_CANCEL   = wx.NewIdRef()
+WINDOW_CLOSE    = wx.NewIdRef()
+WINDOW_START    = wx.NewIdRef()
+WINDOW_RESTART  = wx.NewIdRef()
+WINDOW_EDIT     = wx.NewIdRef()
 
-WINDOW_CHANGE   = wx.Window.NewControlId()
-PANEL_CHANGE    = wx.Window.NewControlId()
-LIST_BOX        = wx.Window.NewControlId()
+WINDOW_CHANGE   = wx.NewIdRef()
+PANEL_CHANGE    = wx.NewIdRef()
+LIST_BOX        = wx.NewIdRef()
 
-CONSOLE_UPDATE  = wx.Window.NewControlId()
-EXECUTION_COMPLETE = wx.Window.NewControlId()
-PROGRESS_UPDATE = wx.Window.NewControlId()
-TIME_UPDATE    = wx.Window.NewControlId()
+CONSOLE_UPDATE  = wx.NewIdRef()
+EXECUTION_COMPLETE = wx.NewIdRef()
+PROGRESS_UPDATE = wx.NewIdRef()
+TIME_UPDATE    = wx.NewIdRef()
 
-USER_INPUT = wx.Window.NewControlId()
+USER_INPUT = wx.NewIdRef()
 
-LEFT_DOWN = wx.Window.NewControlId()
+LEFT_DOWN = wx.NewIdRef()
 
