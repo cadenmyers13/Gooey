@@ -30,6 +30,15 @@ print(stylize('Hello world!', fg('red') + attr('bold')))
 
 > Note that you combine the foreground and attribute functions with the `+` operator.   
 
+Gooey reads your program's output through a pipe rather than a terminal. Because of this, colored (version 1.4 and later) adds no color codes, and the text is shown without styling. To keep the styling, set the `FORCE_COLOR` environment variable at the top of your program:
+
+```python
+import os
+os.environ.setdefault('FORCE_COLOR', '1')
+```
+
+> `FORCE_COLOR` also turns on color for other libraries that check it, such as rich. Some of their output, such as progress bars, may not display correctly in the Gooey console.
+
 ### Attributes: 
 
 Richtext currently supports the following attributes:
